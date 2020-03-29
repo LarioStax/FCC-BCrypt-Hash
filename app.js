@@ -44,7 +44,12 @@ bcrypt.hash('passw0rd!', 13, (err, hash) => {
 //END_ASYNC
 
 //START_SYNC
-
+let hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
+console.log("Hash 3:");
+console.log(hash);
+let result = bcrypt.compareSync(myPlaintextPassword, hash);
+console.log("Res 3:");
+console.log(result);
 
 
 //END_SYNC
